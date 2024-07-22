@@ -1,0 +1,58 @@
+<div class="home-container">
+  <div class="home-container">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a id="logo" class="logo" routerLink="/"><h1>JobFinder</h1></a>
+      </div>
+      <div class="navbar-links">
+        <a routerLink="/add">Pubblica annuncio</a>
+        <a routerLink="#">Le mie candidature</a>
+        <a routerLink="#">Profilo</a>
+      </div>
+    </nav>
+
+    <br />
+
+    <!-- <header class="home-header">
+    <h1>Benvenuto su JobFinder</h1>
+    <p>Trova il lavoro dei tuoi sogni</p>
+  </header> -->
+
+    <section class="search-section">
+      <input
+        type="text"
+        placeholder="Cerca lavoro..."
+        class="search-input"
+        [(ngModel)]="searchTerm"
+        (keyup)="onSearchKeyUp($event)"
+        (focus)="hidePlaceholder($event)"
+        (blur)="showPlaceholder($event)"
+      />
+      <button class="search-button" (click)="searchJobs()">Cerca</button>
+      <button class="sort-button" (click)="toggleRecent()">
+        Ordina per più recenti
+      </button>
+    </section>
+
+    <section class="job-listings">
+      <h2>Offerte di lavoro recenti</h2>
+      <div class="job-grid">
+        <div class="job-card" *ngFor="let job of filteredJobs">
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.description }}</p>
+          <p>Retribuzione: €{{ job.retribution }}</p>
+          <p>Scadenza: {{ job.dueDate | date : "dd/MM/yyyy" }}</p>
+          <div class="job-actions">
+            <button class="apply-button">Candidati</button>
+            <button (click)="editJob(job.id!)" class="edit-button">
+              Modifica
+            </button>
+            <button (click)="deleteJob(job.id!)" class="delete-button">
+              Elimina
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

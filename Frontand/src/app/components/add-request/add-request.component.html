@@ -1,0 +1,59 @@
+<div class="publish-job-container">
+  <div class="central-container">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a id="logo" class="logo" routerLink="/"><h1>JobFinder</h1></a>
+      </div>
+      <div class="navbar-links">
+        <a routerLink="/publish">Pubblica annuncio</a>
+        <a routerLink="#">Le mie candidature</a>
+        <a routerLink="#">Profilo</a>
+      </div>
+    </nav>
+
+    <form class="publish-job-form" (ngSubmit)="onSubmit()">
+      <h2>Pubblica un Nuovo Annuncio</h2>
+      <div class="form-group">
+        <label for="title">Titolo</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="job.title"
+          name="title"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Descrizione</label>
+        <textarea
+          id="description"
+          [(ngModel)]="job.description"
+          name="description"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Data di Scadenza</label>
+        <input
+          type="date"
+          id="dueDate"
+          [(ngModel)]="job.dueDate"
+          name="dueDate"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="retribution">Retribuzione (€)</label>
+        <input
+          type="number"
+          id="retribution"
+          [(ngModel)]="job.retribution"
+          name="retribution"
+          required
+        />
+      </div>
+      <button type="submit" class="submit-button">Pubblica Annuncio</button>
+    </form>
+  </div>
+</div>

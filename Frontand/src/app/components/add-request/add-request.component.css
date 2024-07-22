@@ -1,0 +1,107 @@
+/* Contenitore Centrale */
+.central-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%; /* Assicura che la navbar sia larga al 100% del contenitore */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #40a327; /* Sfondo verde */
+  border-bottom: 2px solid #346329; /* Bordo inferiore più scuro */
+}
+
+.navbar-logo a {
+  text-decoration: none;
+}
+
+.navbar-logo h1 {
+  font-size: 1.8em;
+  color: #fff; /* Colore del testo bianco */
+}
+
+.navbar-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff; /* Colore del testo bianco */
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transizione morbida per i colori */
+  padding: 10px 15px;
+  border-radius: 5px; /* Angoli arrotondati */
+}
+
+.navbar-links a:hover {
+  color: #000000; /* Colore del testo nero al passaggio del mouse */
+  background-color: #fff; /* Sfondo bianco al passaggio del mouse */
+}
+
+.navbar-links a:active {
+  background-color: #54b31e; /* Sfondo più scuro quando attivo */
+  color: #fff; /* Colore del testo bianco quando attivo */
+}
+
+/* Publish Job Form */
+.publish-job-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.publish-job-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.publish-job-form h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
