@@ -20,6 +20,6 @@ export class JobService {
   }
 
   deleteJob(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+    return this.http.delete<any>(`${this.apiUrl}/delete/${id}`);
   }
 }

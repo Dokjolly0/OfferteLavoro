@@ -81,6 +81,10 @@
   font-weight: bold;
 }
 
+#text_normal_weight {
+  font-weight: normal;
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;

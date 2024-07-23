@@ -49,8 +49,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   deleteJob(id: string): void {
     this.jobService.deleteJob(id).subscribe(
       () => {
-        this.jobs = this.jobs.filter((job) => job.id !== id);
-        this.filteredJobs = this.filteredJobs.filter((job) => job.id !== id);
+        this.loadJobs();
       },
       (error: any) => {
         console.error("Errore nell'eliminare l'offerta di lavoro:", error);

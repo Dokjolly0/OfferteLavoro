@@ -42,21 +42,33 @@ export const add_offert = async (
   try {
     const { title, description, dueDate, retribution } = req.body;
 
-    if (!title) throw new Error("Il titolo è obbligatorio");
-    if (!description) throw new Error("La descrizione è obbligatoria");
+    // Verifica che i campi obbligatori siano presenti
+    if (!title) throw { statusCode: 400, message: "Il titolo è obbligatorio" };
+    if (!description)
+      throw { statusCode: 400, message: "La descrizione è obbligatoria" };
     if (retribution === undefined)
-      throw new Error("La retribuzione è obbligatoria");
+      throw { statusCode: 400, message: "La retribuzione è obbligatoria" };
     if (retribution <= 0)
-      throw new Error("La retribuzione deve essere positiva");
+      throw {
+        statusCode: 400,
+        message: "La retribuzione deve essere positiva",
+      };
 
+    // Verifica che la data di inserimento sia valida
     let parsedDueDate: Date;
     if (dueDate) {
       parsedDueDate = new Date(dueDate);
       if (isNaN(parsedDueDate.getTime())) {
-        throw new Error("La data di inserimento non è valida");
+        throw {
+          statusCode: 400,
+          message: "La data di inserimento non è valida",
+        };
       }
       if (parsedDueDate < new Date()) {
-        throw new Error("La data di inserimento non può essere nel passato");
+        throw {
+          statusCode: 400,
+          message: "La data di inserimento non può essere nel passato",
+        };
       }
     } else {
       parsedDueDate = new Date(); // Imposta la data corrente se dueDate non è fornita
