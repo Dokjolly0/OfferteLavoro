@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JobService } from './services/offerte-lavoro.service.service';
-import { AddRequestComponent } from './components/add-request/add-request.component';
+import { AddRequestComponent } from './components/add_request/add-request.component';
+import { UpdateRequestComponent } from './components/update-request/update-request.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AddRequestComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AddRequestComponent,
+    UpdateRequestComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule, // Aggiungi FormsModule qui

@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   editJob(id: string): void {
-    this.router.navigate(['/edit', id]);
+    this.router.navigate([`/update/${id}`]);
   }
 
   searchJobs(): void {
